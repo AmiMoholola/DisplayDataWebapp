@@ -1,0 +1,45 @@
+﻿@using DisplayData.Models;
+@model List<Employee>
+
+@{
+    ViewData["Title"] = "DisplayData Page";
+}
+@if (Model != null)
+{
+    <div class="container">
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Ip Adress</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td data-column="id">@item.id</td>
+                        <td data-column="name">@item.name</td>
+                        <td data-column="surname">@item.surname</td>
+                        <td data-column="email">@item.email</td>
+                        <td data-column="gender">@item.gender</td>
+                        <td data-column="ipaddress">@item.ipaddress</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div>
+        No data To display
+    </div>
+}
+
+
